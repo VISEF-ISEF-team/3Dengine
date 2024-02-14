@@ -140,7 +140,6 @@ class SkyBoxVertexBufferObject(BaseVertexBufferObject):
         return vertex_data
     
     
-
 class AdvancedSkyBoxVertexBufferObject(BaseVertexBufferObject):
     def __init__(self, ctx):
         super().__init__(ctx)

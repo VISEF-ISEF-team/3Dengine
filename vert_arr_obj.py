@@ -1,7 +1,6 @@
 from vert_buf_obj import VertexBufferObject
 from shader_program import ShaderProgram
 
-
 class VertexArrayObject:
     def __init__(self, ctx):
         self.ctx = ctx
@@ -15,10 +14,28 @@ class VertexArrayObject:
             vert_buf_obj = self.vert_buf_obj.vert_buf_objs['cube']
         )
 
-        # cube vertex array object
-        self.vert_arr_objs['model'] = self.get_vertex_array_object(
+        # our model vertex array object
+        self.vert_arr_objs['cat'] = self.get_vertex_array_object(
             program=self.program.programs['default'],
-            vert_buf_obj = self.vert_buf_obj.vert_buf_objs['model']
+            vert_buf_obj = self.vert_buf_obj.vert_buf_objs['cat']
+        )
+        
+        # sphere vertex array object
+        self.vert_arr_objs['sphere'] = self.get_vertex_array_object(
+            program=self.program.programs['default'],
+            vert_buf_obj = self.vert_buf_obj.vert_buf_objs['sphere']
+        )
+
+        # skybox vertex array object
+        self.vert_arr_objs['skybox'] = self.get_vertex_array_object(
+            program=self.program.programs['skybox'],
+            vert_buf_obj = self.vert_buf_obj.vert_buf_objs['skybox']
+        )
+        
+        # advanced skybox vertex array object
+        self.vert_arr_objs['advanced_skybox'] = self.get_vertex_array_object(
+            program=self.program.programs['advanced_skybox'],
+            vert_buf_obj = self.vert_buf_obj.vert_buf_objs['advanced_skybox']
         )
 
     def get_vertex_array_object(self, program, vert_buf_obj):

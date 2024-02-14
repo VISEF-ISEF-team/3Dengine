@@ -2,8 +2,10 @@ import pygame as pg
 import moderngl as mgl
 import sys
 from model import *
+# from model2 import *
 from camera import Camera
 from light import Light
+from mesh import Mesh
 
 class GraphicsEngine:
     def __init__(self, win_size=(1600, 900)):
@@ -27,12 +29,13 @@ class GraphicsEngine:
         
         self.light = Light()
         self.camera = Camera(self)
+        self.mesh = Mesh(self)
         self.scene = Cube(self)
         
     def check_events(self):
         for event in pg.event.get():
             if event.type == pg.QUIT or (event.type == pg.KEYDOWN and event.key == pg.K_ESCAPE):
-                self.scene.destroy()
+                self.mesh.destroy()
                 pg.quit()
                 sys.exit()
                 
